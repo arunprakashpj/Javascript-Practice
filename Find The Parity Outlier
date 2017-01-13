@@ -8,4 +8,32 @@ Should return: 11
 
 [160, 3, 1719, 19, 11, 13, -21]
 
-Should return: 160
+Should return: 160.
+
+
+Solution :
+
+function findOutlier(integers){
+  //your code here
+  var len = integers.length;
+  var oddNum =[];
+  var evenNum =[];
+  for(var i=0;i<len;i++)
+  {
+  if(integers[i]%2==0)
+  {
+  evenNum.push(integers[i]);
+  }
+   if(Math.abs(integers[i]%2)==1)
+  {
+  oddNum.push(integers[i]);
+  }
+  
+  }
+  if(evenNum.length>oddNum.length)
+  {
+  return oddNum[0];
+  }
+  else
+  return evenNum[0];
+}
